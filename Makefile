@@ -1,5 +1,9 @@
+requirements:
+	@pip install -r requirements.txt
+
+
 # %%%%%%%%%%%%%% SERVICE %%%%%%%%%%%%%%
-run: redis workers
+run: requirements redis workers
 	@PYTHONPATH=$$PYTHONPATH:. r3-app --redis-port=7778 --redis-pass=r3 --config-file="./r3_gh/app_config.py"
 
 
