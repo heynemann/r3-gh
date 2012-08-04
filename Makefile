@@ -3,7 +3,7 @@ requirements:
 
 
 # %%%%%%%%%%%%%% SERVICE %%%%%%%%%%%%%%
-run: requirements redis workers
+run: requirements kill-workers redis workers
 	@PYTHONPATH=$$PYTHONPATH:. r3-app --redis-port=7778 --redis-pass=r3 --config-file="./r3_gh/app_config.py"
 
 
