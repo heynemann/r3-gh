@@ -19,9 +19,10 @@ class Reducer:
 
         percentages = {}
         for login, frequency in commits_per_user.iteritems():
-            percentages[login] = float(frequency) / float(total_commits)
+            percentages[login] = round(float(frequency) / float(total_commits) * 100, 2)
 
+        ordered_percentages = sorted(percentages.iteritems(), key=lambda item: -1 * item[1])
         return {
             'total_commits': total_commits,
-            'commit_percentages': percentages
+            'commit_percentages': [{ 'email': item[0], 'percentage': item[1], 'commits': commits_per_user[item[0]] } for item in ordered_percentages]
         }
