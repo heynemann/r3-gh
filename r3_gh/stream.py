@@ -7,7 +7,7 @@ import os
 import sys
 import urllib2
 
-from ujson import loads, dumps
+from ujson import loads
 
 CACHE_PATH = '/tmp/r3-gh-cache'
 

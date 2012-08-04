@@ -4,6 +4,7 @@ requirements:
 
 # %%%%%%%%%%%%%% SERVICE %%%%%%%%%%%%%%
 run: requirements kill-workers redis workers
+	@echo 'running r3 server at localhost:9999'
 	@PYTHONPATH=$$PYTHONPATH:. r3-app --redis-port=7778 --redis-pass=r3 --config-file="./r3_gh/app_config.py"
 
 

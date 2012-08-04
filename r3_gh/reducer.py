@@ -24,5 +24,5 @@ class Reducer:
         ordered_percentages = sorted(percentages.iteritems(), key=lambda item: -1 * item[1])
         return {
             'total_commits': total_commits,
-            'commit_percentages': [{ 'email': item[0], 'percentage': item[1], 'commits': commits_per_user[item[0]] } for item in ordered_percentages]
+            'commit_percentages': [{ 'user': item[0], 'percentage': item[1], 'commits': commits_per_user[item[0]] } for item in ordered_percentages]
         }

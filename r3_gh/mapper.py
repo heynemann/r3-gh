@@ -11,8 +11,6 @@ class CommitsPercentageMapper(Mapper):
         return list(self.split_commits(commits))
 
     def split_commits(self, commits):
-        if commits is None:
-            import ipdb;ipdb.set_trace()
         for commit in commits:
             commit = commit['commit']
-            yield commit['committer']['email'], 1
+            yield commit['committer']['name'], 1
