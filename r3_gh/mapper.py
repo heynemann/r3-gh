@@ -13,4 +13,4 @@ class CommitsPercentageMapper(Mapper):
     def split_commits(self, commits):
         for commit in commits:
             commit = commit['commit']
-            yield commit['committer']['name'], 1
+            yield commit['author']['name'], 1
